@@ -4,7 +4,6 @@
     {
         public string DocumentNumber { get; set; }
         public string VehiclePlate { get; set; }
-        public string State { get; set; }
         public decimal Tax { get; set; }
         public bool Valid { get; set; }
 

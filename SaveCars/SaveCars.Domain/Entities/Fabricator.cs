@@ -7,6 +7,6 @@ namespace SaveCars.Domain.Entities
         public string Name { get; set; }
         public string Nationality { get; set; }
 
-        IEnumerable<Vehicle> Vehicles { get; set; }
+        public IEnumerable<Vehicle> Vehicles { get; set; }
     }
 }

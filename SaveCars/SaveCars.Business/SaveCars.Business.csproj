@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="NotificationSettings\" />
+    <ProjectReference Include="..\SaveCars.Domain\SaveCars.Domain.csproj" />
   </ItemGroup>
 
 </Project>
