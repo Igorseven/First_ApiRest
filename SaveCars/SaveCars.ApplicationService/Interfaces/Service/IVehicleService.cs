@@ -6,7 +6,7 @@ namespace SaveCars.ApplicationService.Interfaces.Service
 {
     public interface IVehicleService : IBaseService<VehicleRequest, VehicleSearchRequest, VehicleResponse>
     {
-        Task<SearchResponse<VehicleResponse>> FindVehiclesAndAllTheDetailsAsync(VehicleSearchRequest searchRequest);
+        Task<SearchResponse<VehicleResponse>> FindVehiclesAndAllDetailsAsync(VehicleSearchRequest searchRequest);
         Task<VehicleResponse> FindVehicleAndDatailsAsync(VehicleSearchRequest searchRequest);
     }
 }

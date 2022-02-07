@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SaveCars.ApplicationService.AutoMapperSettings;
 using SaveCars.IoC.DependencyInjectionHandler;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace SaveCars.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            AutoMapperHandler.Initialize();
             services.AddDependecyInjectionConfiguration(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>

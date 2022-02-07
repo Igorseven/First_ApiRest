@@ -25,7 +25,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveCars.IoC", "SaveCars.Io
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveCars.API", "SaveCars.API\SaveCars.API.csproj", "{CE49E88E-1790-4B18-9170-F78C59AE98D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveCars.ApplicationService", "SaveCars.ApplicationService\SaveCars.ApplicationService.csproj", "{2803431E-12FB-44CA-B1C8-0C3C49C5DD24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveCars.ApplicationService", "SaveCars.ApplicationService\SaveCars.ApplicationService.csproj", "{2803431E-12FB-44CA-B1C8-0C3C49C5DD24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBF5E0C9-63EF-402D-8B95-6B33B31FE706}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
