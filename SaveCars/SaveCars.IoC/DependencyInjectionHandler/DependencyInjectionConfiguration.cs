@@ -1,9 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SaveCars.ApplicationService.Interfaces.Service;
+using SaveCars.ApplicationService.Services;
 using SaveCars.Business.Interfaces.Context;
+using SaveCars.Business.Interfaces.NotificationHandler;
 using SaveCars.Business.Interfaces.Repository;
 using SaveCars.Business.Interfaces.ValidationHandler;
+using SaveCars.Business.NotificationSettings;
 using SaveCars.Business.Validation.EntitiesValidation;
 using SaveCars.Data.EntityFramework.Context;
 using SaveCars.Data.EntityFramework.Wou;
@@ -23,18 +27,17 @@ namespace SaveCars.IoC.DependencyInjectionHandler
 
             services.AddScoped<ApplicationDbContext>();
 
-            //services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<INotificationContext, NotificationContext>();
 
-            var profilesAssembly = AppDomain.CurrentDomain.Load("SaveCars.ApplicationService");
-            services.AddAutoMapper(profilesAssembly);
+            //services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
 
             services.AddScoped<IVehicleRepository, VehicleRepository>();
-            services.AddScoped<IFabricatorRepository, FabricatorRepository>();
-            services.AddScoped<IDocumentRepository, DocumentRepository>();
 
             services.AddScoped<IValidation<Vehicle>, VehicleValidation>();
-            services.AddScoped<IValidation<Document>, DocumentValidation>();
-            services.AddScoped<IValidation<Fabricator>, FabricatorValidation>();
+
+
+            services.AddScoped<IVehicleService, VehicleService>();
         }
     }
 }

@@ -2,10 +2,8 @@
 using FluentValidation.Results;
 using SaveCars.Business.Interfaces.ValidationHandler;
 using SaveCars.Domain.Extention;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SaveCars.Business.Validation

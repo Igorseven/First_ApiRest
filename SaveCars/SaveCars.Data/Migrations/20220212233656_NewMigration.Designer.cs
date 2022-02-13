@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SaveCars.Data.EntityFramework.Context;
 
 namespace SaveCars.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220212233656_NewMigration")]
+    partial class NewMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,8 +46,8 @@ namespace SaveCars.Data.Migrations
                         .HasColumnName("Vehicle_Model");
 
                     b.Property<decimal>("Price")
-                        .HasPrecision(12, 2)
-                        .HasColumnType("numeric(12,2)")
+                        .HasPrecision(2)
+                        .HasColumnType("numeric(2)")
                         .HasColumnName("Vehicle_Price");
 
                     b.Property<string>("VehiclePlate")

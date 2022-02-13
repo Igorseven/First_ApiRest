@@ -22,7 +22,7 @@ namespace SaveCars.Domain.Enums
         [Description("Este {0} já existe na base de dados.")]
         Exist,
 
-        [Description("O {0} deve ser maior que {1}.")]
+        [Description("Campo {0} deve ser maior que {1}.")]
         ValueExpected,
 
         [Description("Objeto não configurado")]

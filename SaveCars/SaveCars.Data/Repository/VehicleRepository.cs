@@ -15,15 +15,5 @@ namespace SaveCars.Data.Repository
         {
 
         }
-
-        public async Task<Vehicle> FindVehicleAndDatailsAsync(Expression<Func<Vehicle, bool>> where, params Expression<Func<Vehicle, object>>[] includeProperties)
-        {
-            return await GetAssociation(includeProperties).FirstOrDefaultAsync();
-        }
-
-        public async Task<IEnumerable<Vehicle>> FindVehiclesAndAllTheDetailsAsync(params Expression<Func<Vehicle, object>>[] includeProperties)
-        {
-            return await GetAssociation(includeProperties).ToListAsync();
-        }
     }
 }

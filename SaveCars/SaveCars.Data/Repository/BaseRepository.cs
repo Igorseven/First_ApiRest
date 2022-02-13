@@ -36,8 +36,10 @@ namespace SaveCars.Data.Repository
             return await this._dbContext.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteAsync(TEntity entity)
+        public async Task<int> DeleteAsync(TKey id)
         {
+            var entity = await this.Dbset.FindAsync(id);
+
             if (this._dbContext.Entry(entity).State == EntityState.Detached)
             {
                 this.Dbset.Attach(entity);

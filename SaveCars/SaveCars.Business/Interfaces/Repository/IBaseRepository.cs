@@ -9,7 +9,7 @@ namespace SaveCars.Business.Interfaces.Repository
     {
         Task<int> CreateAsync(TEntity entity);
         Task<int> UpdateAsync(TEntity entity);
-        Task<int> DeleteAsync(TEntity entity);
+        Task<int> DeleteAsync(TKey id);
 
         Task<TEntity> FindByAsync(TKey id);
         Task<TEntity> FindByAsync(Expression<Func<TEntity, bool>> where = null);

@@ -3,17 +3,17 @@ using System.Threading.Tasks;
 
 namespace SaveCars.ApplicationService.Interfaces.Service
 {
-    public interface IBaseService<TRequest, TSearchRequest, TResponse> 
+    public interface IBaseService<TRequest, TUpdateRequest, TSearchRequest, TResponse> 
         where TRequest : class
         where TResponse : class 
         where TSearchRequest : class
     {
-        Task SaveAsync(TRequest request);
-        Task UpdateAsync(TRequest request);
-        Task DeleteAsync(TRequest request);
+        Task<int> SaveAsync(TRequest request);
+        Task<int> UpdateAsync(TUpdateRequest request);
+        Task<int> DeleteAsync(int id);
 
         Task<TResponse> FindByAsync(int id);
-        Task<TResponse> FindByAsync(TRequest request);
-        Task<SearchResponse<TResponse>> FindAllAsync(TSearchRequest searchRequest);
+        Task<TResponse> FindByAsync(TSearchRequest searchRequest);
+        Task<SearchResponse<TResponse>> FindAllAsync();
     }
 }

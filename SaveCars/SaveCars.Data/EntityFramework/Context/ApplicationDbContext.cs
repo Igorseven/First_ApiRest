@@ -6,8 +6,6 @@ namespace SaveCars.Data.EntityFramework.Context
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Vehicle> Vehicles { get; set; }
-        public DbSet<Fabricator> Fabricators { get; set; }
-        public DbSet<Document> Documents { get; set; }
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContext) : base(dbContext)

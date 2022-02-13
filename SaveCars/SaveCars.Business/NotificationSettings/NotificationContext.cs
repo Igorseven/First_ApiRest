@@ -7,42 +7,43 @@ namespace SaveCars.Business.NotificationSettings
 {
     public class NotificationContext : INotificationContext
     {
-        private Dictionary<string, string> _notifications;
+        private List<DomainNotification> _notifications;
 
         public NotificationContext()
         {
-            this._notifications = new Dictionary<string, string>();
+            this._notifications = new List<DomainNotification>();
         }
 
-        public Dictionary<string, string> GetNotifications() => this._notifications;
+
+
+        List<DomainNotification> INotificationContext.GetNotifications() => this._notifications;
 
         public bool HasNotification() => this._notifications.Any();
 
 
-        public void AddNotification(Notification notification)
+        public void AddNotification(DomainNotification notification)
         {
-            this._notifications.Add(notification.Key, notification.Value);
+            this._notifications.Add(notification);
         }
 
         public void AddNotification(string key, string value)
         {
-            this._notifications.Add(key, value);
+            this._notifications.Add(new DomainNotification(key, value));
         }
 
-        public void AddNotifications(IList<Notification> notifications)
+        public void AddNotifications(IEnumerable<DomainNotification> notifications)
         {
-            foreach(var error in notifications)
-            {
-                this._notifications.Add(error.Key, error.Value);
-            }
+            this._notifications.AddRange(notifications);
         }
 
         public void AddNotifications(ValidationResult validationResult)
         {
             foreach(var error in validationResult.Errors)
             {
-                this._notifications.Add(error.ErrorCode, error.ErrorMessage);
+                this._notifications.Add(new DomainNotification(error.ErrorCode, error.ErrorMessage));
             }
         }
+
+        
     }
 }

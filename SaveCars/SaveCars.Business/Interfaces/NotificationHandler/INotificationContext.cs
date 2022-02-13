@@ -6,11 +6,11 @@ namespace SaveCars.Business.Interfaces.NotificationHandler
 {
     public interface INotificationContext
     {
-        Dictionary<string, string> GetNotifications();
+       List<DomainNotification> GetNotifications();
         bool HasNotification();
-        void AddNotification(Notification notification);
+        void AddNotification(DomainNotification notification);
         void AddNotification(string key, string value);
-        void AddNotifications(IList<Notification> notifications);
+        void AddNotifications(IEnumerable<DomainNotification> notifications);
         void AddNotifications(ValidationResult validationResult);
     }
 }
